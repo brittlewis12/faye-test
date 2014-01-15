@@ -1,0 +1,98 @@
+<script>
+    $(function() {
+    // Subscribe to receive messages!
+    var client = new Faye.Client('http://localhost:9292/faye');
+
+    // Our public subscription
+    var public_subscription = client.subscribe('/group/1', function(data) {
+      console.log(data);
+      window.data = data;
+      $('<p>').html(data.username + ": " + decodeURI(data.msg)).appendTo('#chat-room');
+    });
+  });
+</script>
+
+<div class="chat-container">
+  <div id="chat-room">
+    <p class="alert"> Welcome to the chat room <%= session[:username] %>! </p>
+  </div>
+
+  <form id="new-message-form">
+    <input type="text" id="message" name="message">
+    <input type="submit" value="Send">
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+//   // Our own private channel
+//   var private_subscription = client.subscribe('/messages/private/' + "<%= session[:username] %>", function(data) {
+//     // with Backbone:
+//     // messagesCollection.add(data.msg);
+//     $('<p></p>').addClass('private').html(data.username + ": " + decodeURI(data.msg)).appendTo('#chat_room');
+//   });
+
+//   // Handle form submission to publish messages.
+//   $('#new_message_form').submit(function(){
+//     // Is it a private message?
+//     var message = $('#message').val()
+//     if (matches = message.match(/@(\w+) (.+)/)) {
+//       client.publish('/messages/private/' + matches[1], {
+//         username: <%= session[:username] %>,
+//         msg: encodeURI(message)
+//       });
+//       client.publish('/messages/private/' + '<%= session[:username] %>', {
+//         username: <%= session[:username] %>,
+//         msg: encodeURI(message)
+//       });
+//     }
+//     else {
+//       // It's a public message
+//       client.publish('/messages/public', {
+//         username: <%= session[:username] %>,
+//         msg: $('#message').val()
+//       });
+//     }
+
+//     // Clear the message box
+//     $('#message').val('');
+
+//     return false;
+//   });
+// });
+</script>
