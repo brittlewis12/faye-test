@@ -16,3 +16,7 @@ Of course, there are still the matters of authetication, authorizaiton, and chan
 
 Feel free to play with and suggest any more robust implementations; another constraint I placed on myself was to **not** use a paid push service, like Pusher (although that would also be a great alternative).
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/brittlewis12/faye-test/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
